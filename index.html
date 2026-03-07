@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo di miglioramento siti web per rivenditori di materiali e utensili professionali.">
+  <title>LegnoForte | Demo miglioramento sito per falegnameria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar" id="top">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home" aria-label="Vai alla sezione Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span id="brandName">LegnoForte</span>
+      </a>
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainNav"
+        aria-label="Apri menu di navigazione"
+      >
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Navigazione principale">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#prima-dopo">Prima/Dopo</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Demo commerciale per rivenditori tecnici</p>
+          <h1>
+            Trasformo siti lenti e confusi in strumenti che portano richieste reali.
+          </h1>
+          <p id="heroLead" class="lead"></p>
+          <div class="hero-cta">
+            <a id="heroWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Scrivimi su WhatsApp</a>
+            <a class="btn btn-secondary" href="#prima-dopo">Vedi esempio prima/dopo</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <img
+            class="hero-image"
+            src="images/perspective-draws-eye-down-long-aisle-massive-warehouse-showcasing-neatly-stacked-timber-various-sizes-391960846-94667713.jpg"
+            alt="Corsia di magazzino con tavole di legno stoccate in ordine"
+          >
+          <aside class="hero-panel" aria-label="Punti di forza del progetto">
+            <h2>Risultato atteso</h2>
+            <ul id="heroHighlights"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi" class="section section-dark">
+      <div class="container reveal">
+        <h2>Servizi pensati per chi vende utensili e materiali</h2>
+        <p class="section-intro">
+          Miglioro la struttura del sito per aiutare artigiani e imprese a trovare subito il prodotto giusto e contattarvi senza perdere tempo.
+        </p>
+        <div id="serviceGrid" class="service-grid"></div>
+      </div>
+    </section>
+
+    <section id="prima-dopo" class="section">
+      <div class="container reveal">
+        <h2>Prima / Dopo: esempio su attività fittizia di falegnameria</h2>
+        <p class="section-intro">
+          Un confronto rapido per mostrare come cambia l'efficacia commerciale del sito.
+        </p>
+        <div id="kpiRow" class="kpi-row" aria-label="Indicatori di miglioramento"></div>
+        <div class="audience-tabs-wrap">
+          <div id="audienceTabs" class="audience-tabs" role="tablist" aria-label="Confronto per tipologia cliente"></div>
+          <div id="comparisonGrid" class="comparison-grid"></div>
+        </div>
+        <p id="trustNote" class="trust-note"></p>
+      </div>
+    </section>
+
+    <section id="contatti" class="section section-accent">
+      <div class="container contact-wrap reveal">
+        <div class="contact-copy">
+          <h2>Vuoi una versione migliorata del tuo sito in 7 giorni?</h2>
+          <p>
+            Inviami il link del tuo sito e ti rispondo con 3 miglioramenti concreti: struttura, conversione e velocita mobile.
+          </p>
+          <div class="contact-cta">
+            <a id="contactWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Invia sito via WhatsApp</a>
+            <a id="contactEmail" class="contact-mail" href="#">Oppure scrivimi via email</a>
+          </div>
+        </div>
+        <figure class="contact-figure">
+          <img
+            class="contact-image"
+            src="images/stock-photo-photo-group-of-wood-worker-men-and-women-team-standing-in-distribution-wood-factory-warehouse-2360972159-868102001.jpg"
+            alt="Team di operatori in una rivendita di legname e materiali"
+          >
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> <span id="footerBrand">LegnoForte</span> - Demo portfolio consulenza web.</small>
+      <a href="#top">Torna su</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
