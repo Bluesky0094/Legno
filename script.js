@@ -161,23 +161,9 @@ function populateSite(config) {
     serviceGrid.innerHTML = config.services
       .map(
         (service) => `
-          <article class="card">
+          <article class="card motion-item">
             <h3>${service.title}</h3>
             <p>${service.description}</p>
-          </article>
-        `
-      )
-      .join("");
-  }
-
-  const kpiRow = document.getElementById("kpiRow");
-  if (kpiRow) {
-    kpiRow.innerHTML = config.beforeAfter.kpis
-      .map(
-        (kpi) => `
-          <article class="kpi-card" aria-label="${kpi.label}">
-            <p class="kpi-value">${kpi.value}</p>
-            <p class="kpi-label">${kpi.label}</p>
           </article>
         `
       )
@@ -195,45 +181,32 @@ function populateSite(config) {
 
     const renderComparison = (audience) => {
       comparisonGrid.innerHTML = `
+        <div class="comparison-summary motion-item">
+          <p class="comparison-summary-label">Interventi chiave</p>
+          <p class="comparison-summary-text">${audience.changes.join(" - ")}</p>
+        </div>
         <div class="compare-track">
-          <article class="compare-card" aria-label="${audience.before.title}">
+          <article class="compare-card motion-item" aria-label="${audience.before.title}">
             <div class="compare-head bad">${audience.before.title}</div>
             <div class="compare-body">
-              <div class="mockup bad" aria-hidden="true">
-                <span class="mockup-label">${audience.before.mockupLabel}</span>
-                <span class="mock-line short"></span>
-                <span class="mock-line full"></span>
-                <span class="mock-line mid"></span>
-                <span class="mock-chip"></span>
-              </div>
               <ul>
                 ${audience.before.points.map((p) => `<li>${p}</li>`).join("")}
               </ul>
             </div>
           </article>
-          <article class="compare-card" aria-label="${audience.after.title}">
+          <article class="compare-card motion-item" aria-label="${audience.after.title}">
             <div class="compare-head good">${audience.after.title}</div>
             <div class="compare-body">
-              <div class="mockup good" aria-hidden="true">
-                <span class="mockup-label">${audience.after.mockupLabel}</span>
-                <span class="mock-line full"></span>
-                <span class="mock-line full"></span>
-                <span class="mock-line mid"></span>
-                <span class="mock-cta"></span>
-              </div>
               <ul>
                 ${audience.after.points.map((p) => `<li>${p}</li>`).join("")}
               </ul>
             </div>
           </article>
         </div>
-        <aside class="changes-strip" aria-label="Interventi effettuati">
-          <h3>Cosa e cambiato</h3>
-          <div class="changes-list">
-            ${audience.changes.map((item) => `<span class="change-pill">${item}</span>`).join("")}
-          </div>
-        </aside>
       `;
+
+      applyMotionDelays(comparisonGrid.querySelectorAll(".motion-item"));
+      triggerMotionItems(comparisonGrid);
     };
 
     const renderTabs = () => {
@@ -242,7 +215,7 @@ function populateSite(config) {
           (audience, index) => `
             <button
               type="button"
-              class="audience-tab${audience.id === activeAudience.id ? " is-active" : ""}"
+              class="audience-tab motion-item${audience.id === activeAudience.id ? " is-active" : ""}"
               role="tab"
               aria-selected="${audience.id === activeAudience.id}"
               tabindex="${audience.id === activeAudience.id ? "0" : "-1"}"
@@ -254,6 +227,9 @@ function populateSite(config) {
           `
         )
         .join("");
+
+      applyMotionDelays(tabsRoot.querySelectorAll(".motion-item"));
+      triggerMotionItems(tabsRoot);
 
       const buttons = tabsRoot.querySelectorAll(".audience-tab");
       buttons.forEach((button, index) => {
@@ -294,11 +270,31 @@ function populateSite(config) {
 
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  applyMotionDelays(document.querySelectorAll(".hero-copy > *, .hero-panel > *, .service-grid .card, .contact-copy > *"));
+}
+
+function applyMotionDelays(elements) {
+  elements.forEach((element, index) => {
+    element.style.setProperty("--delay", `${index * 70}ms`);
+  });
+}
+
+function triggerMotionItems(container) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = container.querySelectorAll(".motion-item");
+  if (reduceMotion || items.length === 0) return;
+
+  items.forEach((item) => item.classList.remove("motion-enter-active"));
+  requestAnimationFrame(() => {
+    items.forEach((item) => item.classList.add("motion-enter-active"));
+  });
 }
 
 function setupReveal() {
   const revealItems = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) {
     revealItems.forEach((el) => el.classList.add("is-visible"));
     return;
   }
@@ -319,6 +315,46 @@ function setupReveal() {
   );
 
   revealItems.forEach((el) => observer.observe(el));
+}
+
+function setupLandingMotion() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) {
+    document.body.classList.add("is-ready");
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add("is-ready");
+    });
+  });
+}
+
+function setupHeroParallax() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const heroImage = document.querySelector(".hero-image");
+  const heroSection = document.querySelector(".hero");
+  if (reduceMotion || !heroImage || !heroSection) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const rect = heroSection.getBoundingClientRect();
+    const offset = Math.max(-18, Math.min(18, rect.top * -0.045));
+    heroImage.style.transform = `scale(1.03) translateY(${offset}px)`;
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateParallax);
+  };
+
+  updateParallax();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }
 
 function setupMobileMenu() {
@@ -373,5 +409,7 @@ function setupMobileMenu() {
 }
 
 populateSite(siteConfig);
+setupLandingMotion();
 setupReveal();
+setupHeroParallax();
 setupMobileMenu();
