@@ -626,6 +626,38 @@ body.is-ready .hero-panel {
     --header-h: 64px;
   }
 
+  .hero {
+    padding-top: 2.4rem;
+  }
+
+  .hero-grid {
+    gap: 1.2rem;
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .hero-image {
+    min-height: 220px;
+    height: 220px;
+    transform: none;
+  }
+
+  .hero-panel {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .section-dark {
+    position: relative;
+    z-index: 1;
+  }
+
   .topbar-inner {
     gap: 0.6rem;
   }
