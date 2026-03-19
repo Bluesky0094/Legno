@@ -364,7 +364,7 @@ function setupMobileMenu() {
   if (!topbar || !toggle || !nav) return;
 
   const navLinks = nav.querySelectorAll('a[href^="#"]');
-  const mobileQuery = window.matchMedia("(max-width: 620px)");
+  const mobileQuery = window.matchMedia("(max-width: 820px)");
 
   const closeMenu = () => {
     topbar.classList.remove("is-menu-open");
