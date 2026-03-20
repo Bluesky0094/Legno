@@ -85,7 +85,7 @@ select {
 }
 
 .section-band {
-  padding-top: 0.8rem;
+  padding-top: 2rem;
 }
 
 .section-soft {
@@ -185,10 +185,10 @@ select {
 .nav-list a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  padding: 0 0.95rem;
+  min-height: 38px;
+  padding: 0 0.85rem;
   border-radius: 999px;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -803,11 +803,23 @@ h3 {
 
 .contact-summary {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 1rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(61, 42, 28, 0.12);
 }
 
 .summary-card {
   min-height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-summary .summary-card::before {
+  content: none;
 }
 
 .summary-value {
@@ -1097,7 +1109,8 @@ body.is-ready .hero-panel {
     width: 100%;
     justify-content: flex-start;
     border-radius: 14px;
-    padding: 0.9rem 1rem;
+    min-height: 34px;
+    padding: 0.72rem 0.9rem;
   }
 
   .site-header.is-menu-open .main-nav {
