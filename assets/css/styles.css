@@ -301,16 +301,15 @@ h3 {
 .hero-home-shell {
   width: min(1440px, calc(100vw - 1rem));
   margin: 0 auto;
-  padding-top: clamp(0.4rem, 1.4vw, 1rem);
+  padding-top: clamp(0.25rem, 1vw, 0.75rem);
 }
 
 .hero-frame {
-  padding: clamp(0.55rem, 1vw, 0.9rem);
-  border-radius: calc(var(--radius) + 10px);
-  background:
-    linear-gradient(145deg, rgba(44, 31, 22, 0.94), rgba(22, 16, 12, 0.98));
-  border: 1px solid rgba(255, 232, 209, 0.12);
-  box-shadow: var(--shadow-deep);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .hero-shell,
@@ -370,18 +369,13 @@ h3 {
   min-height: clamp(420px, 46vw, 620px);
   overflow: hidden;
   background: #120d0a;
-  border-radius: calc(var(--radius) + 2px);
+  border-radius: var(--radius);
   isolation: isolate;
+  box-shadow: var(--shadow-deep);
 }
 
 .hero-stage-home::before {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  z-index: 1;
-  border-radius: calc(var(--radius) - 2px);
-  border: 1px solid rgba(255, 243, 231, 0.12);
-  pointer-events: none;
+  content: none;
 }
 
 .hero-stage-home::after {
@@ -407,15 +401,17 @@ h3 {
 
 .hero-stage-inner {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-copy-minimal {
-  max-width: 46rem;
-  padding: clamp(0.9rem, 1.8vw, 1.2rem);
-  border: 1px solid rgba(255, 243, 231, 0.1);
+  max-width: min(46rem, 62vw);
+  padding: clamp(1rem, 1.8vw, 1.25rem);
+  border: 1px solid rgba(255, 243, 231, 0.14);
   border-radius: calc(var(--radius) - 2px);
-  background: linear-gradient(180deg, rgba(18, 13, 10, 0.4), rgba(18, 13, 10, 0.52));
-  backdrop-filter: blur(4px);
+  background: linear-gradient(180deg, rgba(18, 13, 10, 0.46), rgba(18, 13, 10, 0.58));
+  backdrop-filter: blur(10px);
   box-shadow: 0 16px 36px rgba(10, 7, 6, 0.16);
 }
 
@@ -1150,21 +1146,18 @@ body.is-ready .hero-panel {
     min-height: 520px;
   }
 
-  .hero-stage-home::before {
-    inset: 0.7rem;
-  }
-
   .hero-stage-home::after {
     background:
       linear-gradient(180deg, rgba(12, 9, 7, 0.18) 0%, rgba(12, 9, 7, 0.48) 56%, rgba(12, 9, 7, 0.72) 100%);
   }
 
   .hero-stage-overlay {
-    padding: 2rem 0 1.5rem;
+    padding: 2rem 0.9rem 1.5rem;
   }
 
   .hero-copy-minimal {
-    padding: 0;
+    max-width: 100%;
+    padding: 0.95rem;
   }
 
   .hero-image {
@@ -1218,11 +1211,7 @@ body.is-ready .hero-panel {
   }
 
   .hero-frame {
-    padding: 0.45rem;
-  }
-
-  .hero-stage-home::before {
-    inset: 0.5rem;
+    padding: 0;
   }
 
   .stat-card,
