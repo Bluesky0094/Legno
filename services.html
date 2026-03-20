@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servizi e logistica di F.lli Rinaldi Legnami: consegna, taglio, preparazione ordini e supporto per cantieri e falegnamerie.">
+  <title>Servizi e Logistica | F.lli Rinaldi Legnami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="services">
+  <header class="site-header" id="top">
+    <div class="container site-header-inner">
+      <a class="brand" href="index.html" aria-label="Vai alla home di F.lli Rinaldi Legnami">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span id="brandName">F.lli Rinaldi Legnami</span>
+      </a>
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainNav"
+        aria-label="Apri menu di navigazione"
+      >
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Navigazione principale">
+        <ul class="nav-list">
+          <li><a data-nav="home" href="index.html">Home</a></li>
+          <li><a href="index.html#materiali">Materiali</a></li>
+          <li><a data-nav="services" href="services.html">Servizi e Logistica</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="inner-hero section">
+      <div class="container inner-hero-layout reveal">
+        <div class="inner-hero-copy">
+          <p class="eyebrow motion-item">Servizi e logistica</p>
+          <h1 class="motion-item">Un partner di fornitura che aiuta il cliente anche dopo la scelta del materiale.</h1>
+          <p class="lead motion-item" id="servicesHeroLead"></p>
+          <div class="hero-actions motion-item">
+            <a class="btn btn-primary" id="heroWhatsapp" href="#" target="_blank" rel="noopener noreferrer">Richiedi un preventivo</a>
+            <a class="btn btn-secondary" href="#servizi-lista">Scopri i servizi</a>
+          </div>
+        </div>
+        <div class="inner-hero-media motion-item">
+          <img class="hero-image" src="images/inventory-wood-warehouse-257187831-2893733385.jpg" alt="Magazzino con pannelli e legname pronti per la preparazione ordini">
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-band section-tight reveal">
+      <div class="container trust-grid" id="servicesTrustStats"></div>
+    </section>
+
+    <section class="section" id="servizi-lista">
+      <div class="container section-head reveal">
+        <p class="eyebrow">Operativita</p>
+        <h2>Servizi pensati per semplificare forniture, preparazione ordini e consegne.</h2>
+        <p class="section-intro">La pagina secondaria deve far capire che l'azienda non vende solo materiale: aiuta il cliente a riceverlo, prepararlo e gestirlo con tempi e modalita chiare.</p>
+      </div>
+      <div class="container logistics-grid" id="logisticsGrid"></div>
+    </section>
+
+    <section class="section section-soft" id="processo">
+      <div class="container process-layout reveal">
+        <div>
+          <p class="eyebrow">Come lavoriamo</p>
+          <h2>Un flusso semplice per clienti professionali, falegnamerie e imprese in cantiere.</h2>
+        </div>
+        <div class="process-steps" id="processSteps"></div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container warehouse-layout reveal">
+        <div class="warehouse-copy">
+          <p class="eyebrow">Preparazione e supporto</p>
+          <h2>Taglio, preparazione materiale e coordinamento consegne fanno parte del servizio, non di un extra poco chiaro.</h2>
+          <p class="section-intro">Qui il cliente trova un servizio organizzato, con processi chiari, preparazione materiale e un supporto concreto sulle tempistiche di consegna.</p>
+        </div>
+        <div class="warehouse-gallery">
+          <img class="warehouse-image motion-item" src="images/large-rolls-compressed-wood-fiber-warehouse-setting-large-rolls-compressed-wood-fiber-warehouse-setting-363112547-3031267286.jpg" alt="Materiale stoccato e organizzato in area di magazzino">
+          <img class="warehouse-image motion-item" src="images/csm_kragarmregal_schreiner06_9e70cb109e.jpg" alt="Sistema di stoccaggio per legname e pannelli">
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="contatti">
+      <div class="container quote-layout reveal">
+        <div class="quote-copy">
+          <p class="eyebrow">Contatti rapidi</p>
+          <h2>Parliamo di materiale, tempistiche e modalita di consegna.</h2>
+          <p class="section-intro" id="contactLead"></p>
+          <div class="contact-list" id="contactList"></div>
+          <div class="hero-actions motion-item">
+            <a class="btn btn-primary" id="contactWhatsapp" href="#" target="_blank" rel="noopener noreferrer">Invia richiesta su WhatsApp</a>
+            <a class="btn btn-secondary" id="contactEmail" href="#">Scrivi via email</a>
+          </div>
+        </div>
+        <figure class="quote-figure motion-item">
+          <img class="quote-image" src="images/Mass-Timber-Data-Centre-Projects-2282254981.webp" alt="Applicazione professionale del legno strutturale in progetto tecnico">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> <span id="footerBrand">F.lli Rinaldi Legnami</span> - Servizi di fornitura, preparazione e logistica per professionisti.</small>
+      <a href="#top">Torna su</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

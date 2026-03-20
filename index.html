@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Demo di miglioramento siti web per rivenditori di materiali e utensili professionali.">
-  <title>LegnoForte | Demo miglioramento sito per falegnameria</title>
+  <meta
+    name="description"
+    content="F.lli Rinaldi Legnami: legname strutturale, pannelli, tavolame, magazzino coperto e consegne per imprese, falegnamerie e professionisti."
+  >
+  <title>F.lli Rinaldi Legnami | Fornitura legname, pannelli e logistica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="topbar" id="top">
-    <div class="container topbar-inner">
-      <a class="brand" href="#home" aria-label="Vai alla sezione Home">
+<body data-page="home">
+  <header class="site-header" id="top">
+    <div class="container site-header-inner">
+      <a class="brand" href="#home" aria-label="Vai alla home di F.lli Rinaldi Legnami">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span id="brandName">LegnoForte</span>
+        <span id="brandName">F.lli Rinaldi Legnami</span>
       </a>
       <button
         id="menuToggle"
@@ -31,9 +34,10 @@
       </button>
       <nav id="mainNav" class="main-nav" aria-label="Navigazione principale">
         <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#prima-dopo">Prima/Dopo</a></li>
+          <li><a data-nav="home" href="index.html">Home</a></li>
+          <li><a href="#materiali">Materiali</a></li>
+          <li><a href="#azienda">Azienda</a></li>
+          <li><a href="services.html">Servizi e Logistica</a></li>
           <li><a href="#contatti">Contatti</a></li>
         </ul>
       </nav>
@@ -42,80 +46,106 @@
 
   <main>
     <section id="home" class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow motion-item">Demo commerciale per rivenditori tecnici</p>
-          <h1 class="motion-item">
-            Trasformo siti lenti e confusi in strumenti che portano richieste reali.
-          </h1>
-          <p id="heroLead" class="lead motion-item"></p>
-          <div class="hero-cta motion-item">
-            <a id="heroWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Scrivimi su WhatsApp</a>
-            <a class="btn btn-secondary" href="#prima-dopo">Vedi esempio prima/dopo</a>
-          </div>
-        </div>
-        <div class="hero-visual reveal">
+      <div class="container hero-layout">
+        <div class="hero-stage hero-media reveal">
           <img
             class="hero-image"
-            src="images/perspective-draws-eye-down-long-aisle-massive-warehouse-showcasing-neatly-stacked-timber-various-sizes-391960846-94667713.jpg"
-            alt="Corsia di magazzino con tavole di legno stoccate in ordine"
+            src="images/photo-showcases-well-organized-secure-timber-storage-facility-lumber-holding-yard-situated-wood-warehouse-330971759-1487841874.jpg"
+            alt="Piazzale con legname strutturale stoccato in modo ordinato"
           >
-          <aside class="hero-panel" aria-label="Punti di forza del progetto">
-            <h2>Risultato atteso</h2>
-            <ul id="heroHighlights"></ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="servizi" class="section section-dark">
-      <div class="container reveal">
-        <h2>Servizi pensati per chi vende utensili e materiali</h2>
-        <p class="section-intro">
-          Miglioro la struttura del sito per aiutare artigiani e imprese a trovare subito il prodotto giusto e contattarvi senza perdere tempo.
-        </p>
-        <div id="serviceGrid" class="service-grid"></div>
-      </div>
-    </section>
-
-    <section id="prima-dopo" class="section">
-      <div class="container reveal">
-        <h2>Prima / Dopo: esempio su attività fittizia di falegnameria</h2>
-        <p class="section-intro">
-          Un confronto rapido per mostrare come cambia l'efficacia commerciale del sito.
-        </p>
-        <div id="audienceTabs" class="audience-tabs" role="tablist" aria-label="Confronto per tipologia cliente"></div>
-        <div id="comparisonGrid" class="comparison-grid"></div>
-        <p id="trustNote" class="trust-note"></p>
-      </div>
-    </section>
-
-    <section id="contatti" class="section section-accent">
-      <div class="container contact-wrap reveal">
-        <div class="contact-copy">
-          <h2 class="motion-item">Vuoi una versione migliorata del tuo sito in 7 giorni?</h2>
-          <p class="motion-item">
-            Inviami il link del tuo sito e ti rispondo con 3 miglioramenti concreti: struttura, conversione e velocita mobile.
-          </p>
-          <div class="contact-cta motion-item">
-            <a id="contactWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Invia sito via WhatsApp</a>
-            <a id="contactEmail" class="contact-mail" href="#">Oppure scrivimi via email</a>
+          <div class="hero-overlay">
+            <div class="hero-copy hero-copy-block">
+              <p class="eyebrow motion-item">Forniture per professionisti e imprese</p>
+              <h1 class="motion-item">Legname, pannelli e stock affidabile per chi deve lavorare senza fermarsi.</h1>
+              <p id="heroLead" class="lead motion-item"></p>
+              <div class="hero-actions motion-item">
+                <a id="heroWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Richiedi un preventivo</a>
+                <a class="btn btn-secondary" href="#materiali">Scopri i materiali</a>
+              </div>
+            </div>
           </div>
         </div>
-        <figure class="contact-figure motion-item">
+      </div>
+    </section>
+
+    <section class="trust-band section-tight reveal" aria-label="Dati principali aziendali">
+      <div class="container trust-grid" id="trustStats"></div>
+    </section>
+
+    <section class="section" id="materiali">
+      <div class="container section-head reveal">
+        <p class="eyebrow">Materiali disponibili</p>
+        <h2>Una fornitura pensata per cantieri, carpenterie, laboratori e lavorazioni tecniche.</h2>
+        <p class="section-intro">
+          Il sito deve comunicare stock reale, competenza sul prodotto e una disponibilita concreta per chi acquista con misure, tempi e impieghi precisi.
+        </p>
+      </div>
+      <div class="container materials-grid" id="materialsGrid"></div>
+    </section>
+
+    <section class="section section-soft" id="azienda">
+      <div class="container story-layout reveal">
+        <div class="story-copy">
+          <p class="eyebrow">Azienda familiare</p>
+          <h2 id="storyTitle"></h2>
+          <p id="storyLead" class="section-intro"></p>
+          <div class="story-points" id="storyPoints"></div>
+        </div>
+        <div class="story-gallery">
           <img
-            class="contact-image"
+            class="story-image story-image-large motion-item"
             src="images/stock-photo-photo-group-of-wood-worker-men-and-women-team-standing-in-distribution-wood-factory-warehouse-2360972159-868102001.jpg"
-            alt="Team di operatori in una rivendita di legname e materiali"
+            alt="Team operativo in magazzino"
+          >
+          <img
+            class="story-image motion-item"
+            src="images/Tom-checking-colour-in-oak-logs.englishwoodlandstimber.webp"
+            alt="Controllo qualita del legname in area di selezione"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="servizi">
+      <div class="container section-head reveal">
+        <p class="eyebrow">Supporto operativo</p>
+        <h2>Non solo materiale: preparazione ordini, consegne e supporto diretto per clienti professionali.</h2>
+        <p class="section-intro">
+          La home deve chiarire subito che il valore non e soltanto nel prodotto, ma nella capacita di prepararlo, coordinarlo e consegnarlo con metodo.
+        </p>
+      </div>
+      <div class="container service-preview-grid" id="servicePreviewGrid"></div>
+      <div class="container service-preview-cta reveal">
+        <a class="btn btn-primary" href="services.html">Vai alla pagina servizi e logistica</a>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="contatti">
+      <div class="container quote-layout reveal">
+        <div class="quote-copy">
+          <p class="eyebrow">Richieste rapide</p>
+          <h2>Parliamo di quantita, misure, disponibilita e tempi di consegna.</h2>
+          <p class="section-intro" id="contactLead"></p>
+          <div class="contact-list" id="contactList"></div>
+          <div class="hero-actions motion-item">
+            <a id="contactWhatsapp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Invia richiesta su WhatsApp</a>
+            <a id="contactEmail" class="btn btn-secondary" href="#">Scrivi via email</a>
+          </div>
+        </div>
+        <figure class="quote-figure motion-item">
+          <img
+            class="quote-image"
+            src="images/Taylor-Maxwell-Portishead-Warehouse-Dan-Mathews-1.webp"
+            alt="Area di magazzino coperto per legname e pannelli"
           >
         </figure>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <small>&copy; <span id="year"></span> <span id="footerBrand">LegnoForte</span> - Demo portfolio consulenza web.</small>
+      <small>&copy; <span id="year"></span> <span id="footerBrand">F.lli Rinaldi Legnami</span> - Fornitura di legname, pannelli e servizi logistici per professionisti.</small>
       <a href="#top">Torna su</a>
     </div>
   </footer>
