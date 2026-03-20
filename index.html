@@ -5,71 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="F.lli Rinaldi Legnami: legname strutturale, pannelli, tavolame, magazzino coperto e consegne per imprese, falegnamerie e professionisti."
+    content="F.lli Rinaldi Legnami: legname strutturale, pannelli, tavolame e servizi logistici per imprese, falegnamerie e professionisti."
   >
-  <title>F.lli Rinaldi Legnami | Fornitura legname, pannelli e logistica</title>
+  <title>F.lli Rinaldi Legnami | Fornitura di legno per chi deve lavorare bene e in tempo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body data-page="home">
-  <header class="site-header" id="top">
-    <div class="container site-header-inner">
-      <a class="brand" href="#home" aria-label="Vai alla home di F.lli Rinaldi Legnami">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span id="brandName">F.lli Rinaldi Legnami</span>
-      </a>
-      <button
-        id="menuToggle"
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mainNav"
-        aria-label="Apri menu di navigazione"
-      >
-        <span class="menu-line"></span>
-        <span class="menu-line"></span>
-        <span class="menu-line"></span>
-      </button>
-      <nav id="mainNav" class="main-nav" aria-label="Navigazione principale">
-        <ul class="nav-list">
-          <li><a data-nav="home" href="index.html">Home</a></li>
-          <li><a href="#materiali">Materiali</a></li>
-          <li><a href="#azienda">Azienda</a></li>
-          <li><a href="services.html">Servizi e Logistica</a></li>
-          <li><a href="#contatti">Contatti</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body data-page="home" data-root=".">
+  <div data-component="header"></div>
 
   <main>
-    <section id="home" class="hero section">
-      <div class="container hero-layout">
-        <div class="hero-stage hero-media reveal">
-          <img
-            class="hero-image"
-            src="images/photo-showcases-well-organized-secure-timber-storage-facility-lumber-holding-yard-situated-wood-warehouse-330971759-1487841874.jpg"
-            alt="Piazzale con legname strutturale stoccato in modo ordinato"
-          >
-          <div class="hero-overlay">
-            <div class="hero-copy hero-copy-block">
-              <p class="eyebrow motion-item">Forniture per professionisti e imprese</p>
-              <h1 class="motion-item">Legname, pannelli e stock affidabile per chi deve lavorare senza fermarsi.</h1>
-              <p class="lead motion-item">
-                Stock disponibile, consulenza rapida e supporto concreto per chi lavora con tempi stretti e materiali tecnici.
-              </p>
-              <div class="hero-actions motion-item">
-                <a
-                  class="btn btn-primary"
-                  href="https://wa.me/393331234567?text=Buongiorno%2C%20vorrei%20richiedere%20un%20preventivo%20per%20una%20fornitura%20di%20legname."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Richiedi un preventivo
-                </a>
-                <a class="btn btn-secondary" href="#materiali">Scopri i materiali</a>
+    <section class="hero hero-home" id="home">
+      <div class="hero-home-shell">
+        <div class="hero-frame reveal">
+          <div class="hero-stage-home">
+            <img
+              class="hero-image hero-image-home"
+              src="assets/images/hero/home-yard.jpg"
+              alt="Corsia di stoccaggio con tavolame e travi in deposito"
+            >
+            <div class="hero-stage-overlay">
+              <div class="container hero-stage-inner">
+                <div class="hero-copy hero-copy-minimal">
+                  <p class="eyebrow motion-item">Bergamo • forniture B2B</p>
+                  <h1 class="motion-item">Legno, pannelli e logistica con il passo del magazzino vero.</h1>
+                  <p class="hero-lead motion-item">
+                    Stock pronto, relazione diretta e preparazione rapida per imprese, cantieri e falegnamerie che non possono permettersi ritardi o materiali sbagliati.
+                  </p>
+                  <div class="hero-actions motion-item">
+                    <a class="btn btn-primary" data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp preventivi</a>
+                    <a class="btn btn-secondary" data-route="contact">Contatti completi</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -77,193 +46,132 @@
       </div>
     </section>
 
-    <section class="trust-band section-tight reveal" aria-label="Dati principali aziendali">
-      <div class="container trust-grid">
-        <article class="stat-card motion-item">
-          <p class="stat-value">3.500 m2</p>
-          <p class="stat-label">magazzino coperto e area di stoccaggio</p>
-        </article>
-        <article class="stat-card motion-item">
-          <p class="stat-value">30+ anni</p>
-          <p class="stat-label">di attivita familiare nel territorio</p>
-        </article>
-        <article class="stat-card motion-item">
-          <p class="stat-value">48h</p>
-          <p class="stat-label">per preparazioni ordini e richieste urgenti</p>
-        </article>
-        <article class="stat-card motion-item">
-          <p class="stat-value">B2B</p>
-          <p class="stat-label">servizio pensato per imprese e professionisti</p>
-        </article>
-      </div>
+    <section class="section section-band">
+      <div class="container stats-grid reveal" data-list="trustStats" data-render="trust-stats"></div>
     </section>
 
     <section class="section" id="materiali">
-      <div class="container section-head reveal">
-        <p class="eyebrow">Materiali disponibili</p>
-        <h2>Una fornitura pensata per cantieri, carpenterie, laboratori e lavorazioni tecniche.</h2>
+      <div class="container section-header reveal">
+        <p class="eyebrow">Materiali e assortimento</p>
+        <h2>Dalla struttura al laboratorio, una fornitura che parte dal lavoro da fare.</h2>
         <p class="section-intro">
-          Mettiamo a disposizione assortimenti pronti per strutture, falegnameria e lavorazioni tecniche, con supporto nella scelta del materiale piu adatto a uso, misure e tempi di consegna.
+          Non presentiamo un catalogo vago: organizziamo le famiglie di prodotto in modo utile per chi deve comprare, tagliare, stoccare e montare.
         </p>
       </div>
-      <div class="container materials-grid">
-        <article class="material-card motion-item">
-          <img
-            src="images/photo-showcases-well-organized-secure-timber-storage-facility-lumber-holding-yard-situated-wood-warehouse-330971759-1487841874.jpg"
-            alt="Deposito di legname strutturale all'aperto"
-          >
-          <div>
-            <p class="material-meta">Abete, lamellare, travi e morali</p>
-            <h3>Legname strutturale</h3>
-            <p>Materiali per coperture, strutture, carpenteria e cantieri con disponibilita pensata per uso professionale.</p>
-          </div>
-        </article>
-        <article class="material-card motion-item">
-          <img
-            src="images/staff-working-in-wood-furniture-industry-factory-checking-selecting-plywood-wooden-board-type-material-in-stock-warehouse-2REP24R-3241755390.jpg"
-            alt="Controllo pannelli in area di stoccaggio"
-          >
-          <div>
-            <p class="material-meta">OSB, multistrato, compensati, pannelli tecnici</p>
-            <h3>Pannelli e semilavorati</h3>
-            <p>Soluzioni per falegnamerie, allestimenti e prefabbricazione, con attenzione a misure, stabilita e continuita di fornitura.</p>
-          </div>
-        </article>
-        <article class="material-card motion-item">
-          <img
-            src="images/carpenter-wood-warehouse-selects-plank-furniture-making-carpentry-workshop-281204947-4075932683.jpg"
-            alt="Selezione di tavolame in magazzino"
-          >
-          <div>
-            <p class="material-meta">Selezione, taglio e preparazione</p>
-            <h3>Tavolame e lavorazioni</h3>
-            <p>Tavole e materiale preparato per officine e laboratori che vogliono ridurre tempi di lavorazione interna.</p>
-          </div>
-        </article>
-      </div>
+      <div class="container feature-grid reveal" data-list="serviceCategories" data-render="service-categories"></div>
     </section>
 
-    <section class="section section-soft" id="azienda">
-      <div class="container story-layout reveal">
-        <div class="story-copy">
-          <p class="eyebrow">Azienda familiare</p>
-          <h2>Una realta familiare cresciuta attorno al magazzino, alla continuita di fornitura e al rapporto diretto con il cliente.</h2>
+    <section class="section section-dark" id="azienda">
+      <div class="container split-layout reveal">
+        <div class="content-stack">
+          <p class="eyebrow">Azienda</p>
+          <h2>Una realta familiare che parla il linguaggio di magazzino, non quello della brochure.</h2>
           <p class="section-intro">
-            Persone riconoscibili, stock reale e processi chiari: lavoriamo per chi acquista materiale con esigenze tecniche precise e tempi da rispettare.
+            F.lli Rinaldi Legnami cresce attorno a disponibilita, continuita di fornitura e persone riconoscibili. Il cliente trova risposte tecniche, tempi chiari e un interlocutore che conosce davvero il materiale.
           </p>
-          <div class="story-points">
-            <article class="story-point motion-item">
+          <div class="bullet-list">
+            <article class="bullet-card motion-item">
               <h3>Relazione diretta</h3>
-              <p>Contatto rapido con il magazzino e un interlocutore che conosce materiali, impieghi e tempi di approvvigionamento.</p>
+              <p>Contatto rapido con chi segue ordini, arrivi, alternative e preparazione materiale.</p>
             </article>
-            <article class="story-point motion-item">
-              <h3>Fornitura continua</h3>
-              <p>Organizzazione dello stock e gestione ordini pensate per clienti che non possono fermare lavorazioni o cantiere.</p>
+            <article class="bullet-card motion-item">
+              <h3>Stock operativo</h3>
+              <p>Materiale pensato per continuita di lavoro, non per vetrina.</p>
             </article>
-            <article class="story-point motion-item">
-              <h3>Territorio e fiducia</h3>
-              <p>Una presenza concreta sul territorio, con squadra visibile e servizio costruito nel tempo insieme ai clienti professionali.</p>
+            <article class="bullet-card motion-item">
+              <h3>Territorio e affidabilita</h3>
+              <p>Una presenza concreta per clienti che devono produrre, consegnare e montare.</p>
             </article>
           </div>
+          <a class="text-link motion-item" data-route="about">Scopri l'azienda e il metodo di lavoro</a>
         </div>
-        <div class="story-gallery">
+        <div class="media-stack">
           <img
-            class="story-image story-image-large motion-item"
-            src="images/stock-photo-photo-group-of-wood-worker-men-and-women-team-standing-in-distribution-wood-factory-warehouse-2360972159-868102001.jpg"
-            alt="Team operativo in magazzino"
+            class="stack-image stack-image-large motion-item"
+            src="assets/images/hero/about-team.jpg"
+            alt="Squadra in magazzino pronta a seguire ordini e forniture"
           >
           <img
-            class="story-image motion-item"
-            src="images/Tom-checking-colour-in-oak-logs.englishwoodlandstimber.webp"
+            class="stack-image motion-item"
+            src="assets/images/gallery/quality-check.webp"
             alt="Controllo qualita del legname in area di selezione"
           >
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="servizi">
-      <div class="container section-head reveal">
-        <p class="eyebrow">Supporto operativo</p>
-        <h2>Non solo materiale: preparazione ordini, consegne e supporto diretto per clienti professionali.</h2>
+    <section class="section" id="servizi">
+      <div class="container section-header reveal">
+        <p class="eyebrow">Servizi e operativita</p>
+        <h2>Ordini, taglio, supporto tecnico e consegne organizzate per chi deve restare in movimento.</h2>
         <p class="section-intro">
-          Affianchiamo il cliente anche dopo la scelta del prodotto, con servizi che aiutano a ricevere il materiale nel modo piu adatto al lavoro da svolgere.
+          Quando il materiale e corretto ma arriva nel modo sbagliato, il problema resta. Per questo il servizio e parte integrante della fornitura.
         </p>
       </div>
-      <div class="container service-preview-grid">
-        <article class="preview-card motion-item">
-          <h3>Taglio e preparazione materiale</h3>
-          <p>Preparazione ordini piu rapida per clienti che vogliono ricevere materiale pronto alla fase successiva di lavoro.</p>
+      <div class="container timeline-grid reveal">
+        <article class="timeline-card motion-item">
+          <span class="timeline-index">01</span>
+          <h3>Verifica richiesta</h3>
+          <p>Controlliamo disponibilita, misure, impiego e tempi in modo rapido e chiaro.</p>
         </article>
-        <article class="preview-card motion-item">
-          <h3>Logistica e consegna</h3>
-          <p>Organizzazione consegne locali e supporto nella pianificazione per cantieri, aziende e forniture ricorrenti.</p>
+        <article class="timeline-card motion-item">
+          <span class="timeline-index">02</span>
+          <h3>Preparazione ordine</h3>
+          <p>Impostiamo taglio, selezione e organizzazione del materiale prima del ritiro o della consegna.</p>
         </article>
-        <article class="preview-card motion-item">
-          <h3>Supporto tecnico commerciale</h3>
-          <p>Affiancamento nella scelta di essenze, pannelli e soluzioni in base a impiego, stock e tempi di realizzazione.</p>
+        <article class="timeline-card motion-item">
+          <span class="timeline-index">03</span>
+          <h3>Consegna o ritiro</h3>
+          <p>Allineiamo uscita merce e tempi operativi con laboratorio, azienda o cantiere.</p>
         </article>
       </div>
-      <div class="container service-preview-cta reveal">
-        <a class="btn btn-primary" href="services.html">Vai alla pagina servizi e logistica</a>
+      <div class="container section-cta reveal">
+        <a class="btn btn-primary" data-route="services">Vai alla pagina servizi</a>
       </div>
     </section>
 
-    <section class="section quote-section" id="contatti">
-      <div class="container quote-layout reveal">
-        <div class="quote-copy">
-          <p class="eyebrow">Richieste rapide</p>
-          <h2>Parliamo di quantita, misure, disponibilita e tempi di consegna.</h2>
-          <p class="section-intro">
-            Inviaci una richiesta con materiali, misure e tempi previsti: ti rispondiamo con una proposta chiara su disponibilita, preparazione e consegna.
-          </p>
-          <div class="contact-list">
-            <div class="contact-list-item motion-item">
-              <strong>Sede</strong>
-              <span>Via delle Segherie 18, provincia di Bergamo</span>
-            </div>
-            <div class="contact-list-item motion-item">
-              <strong>Telefono</strong>
-              <span>+39 035 555 0142</span>
-            </div>
-            <div class="contact-list-item motion-item">
-              <strong>Email</strong>
-              <span>preventivi@rinaldilegnami.it</span>
-            </div>
-            <div class="contact-list-item motion-item">
-              <strong>Orari</strong>
-              <span>Lun-Ven 7:30-12:00 / 13:30-18:00</span>
-            </div>
-          </div>
-          <div class="hero-actions motion-item">
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/393331234567?text=Buongiorno%2C%20vorrei%20richiedere%20un%20preventivo%20per%20una%20fornitura%20di%20legname."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Invia richiesta su WhatsApp
-            </a>
-            <a class="btn btn-secondary" href="mailto:preventivi@rinaldilegnami.it">preventivi@rinaldilegnami.it</a>
-          </div>
+    <section class="section section-soft">
+      <div class="container gallery-panel reveal">
+        <div class="section-header compact-header">
+          <p class="eyebrow">Spazi e lavorazioni</p>
+          <h2>Un deposito che mostra ordine, scala e capacita di risposta.</h2>
         </div>
-        <figure class="quote-figure motion-item">
-          <img
-            class="quote-image"
-            src="images/Taylor-Maxwell-Portishead-Warehouse-Dan-Mathews-1.webp"
-            alt="Area di magazzino coperto per legname e pannelli"
-          >
-        </figure>
+        <div class="gallery-grid">
+          <img class="gallery-image gallery-image-wide motion-item" src="assets/images/gallery/covered-warehouse.webp" alt="Magazzino coperto con corsie di stoccaggio per legname e pannelli">
+          <img class="gallery-image motion-item" src="assets/images/gallery/plywood-selection.jpg" alt="Selezione di pannelli in area di stoccaggio">
+          <img class="gallery-image motion-item" src="assets/images/gallery/timber-selection.jpg" alt="Selezione del tavolame in magazzino">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact-hub">
+      <div class="container section-header reveal">
+        <p class="eyebrow">Contatti</p>
+        <h2>Tre canali chiari per arrivare subito alla persona giusta.</h2>
+        <p class="section-intro">
+          Per preventivi, disponibilita, misure o consegne puoi scriverci, chiamarci o inviarci tutto su WhatsApp. La logica e semplice: meno passaggi, piu chiarezza.
+        </p>
+      </div>
+      <div class="container contact-grid reveal" data-list="contactChannels" data-render="contact-channels"></div>
+      <div class="container contact-summary reveal">
+        <div class="summary-card motion-item">
+          <p class="summary-label">Sede</p>
+          <p class="summary-value" data-field="contact.address"></p>
+        </div>
+        <div class="summary-card motion-item">
+          <p class="summary-label">Orari</p>
+          <p class="summary-value" data-field="contact.hours"></p>
+        </div>
+        <div class="summary-card motion-item">
+          <p class="summary-label">Servizi</p>
+          <p class="summary-value">Fornitura, preparazione ordini, consegna e supporto tecnico-commerciale.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>&copy; <span id="year">2026</span> <span id="footerBrand">F.lli Rinaldi Legnami</span> - Fornitura di legname, pannelli e servizi logistici per professionisti.</small>
-      <a href="#top">Torna su</a>
-    </div>
-  </footer>
+  <div data-component="footer"></div>
 
-  <script src="script.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,101 @@
+{
+  "brand": {
+    "name": "F.lli Rinaldi Legnami",
+    "tagline": "Magazzino, servizi, continuita",
+    "footerBlurb": "Legname, pannelli, tavolame e servizi logistici per imprese, falegnamerie e professionisti che lavorano con tempi reali e richieste tecniche."
+  },
+  "routes": {
+    "home": "index.html",
+    "services": "pages/services.html",
+    "about": "pages/about.html",
+    "contact": "pages/contact.html"
+  },
+  "nav": [
+    {
+      "key": "home",
+      "label": "Home"
+    },
+    {
+      "key": "services",
+      "label": "Servizi"
+    },
+    {
+      "key": "about",
+      "label": "Azienda"
+    },
+    {
+      "key": "contact",
+      "label": "Contatti"
+    }
+  ],
+  "contact": {
+    "address": "Via delle Segherie 18, provincia di Bergamo",
+    "phoneDisplay": "+39 035 555 0142",
+    "phoneHref": "+390355550142",
+    "email": "preventivi@rinaldilegnami.it",
+    "hours": "Lun-Ven 7:30-12:00 / 13:30-18:00",
+    "whatsappUrl": "https://wa.me/393331234567?text=Buongiorno%2C%20vorrei%20richiedere%20un%20preventivo%20per%20una%20fornitura%20di%20legname."
+  },
+  "trustStats": [
+    {
+      "value": "3.500 m2",
+      "label": "magazzino coperto e area di stoccaggio"
+    },
+    {
+      "value": "30+ anni",
+      "label": "attivita familiare costruita sul territorio"
+    },
+    {
+      "value": "48h",
+      "label": "finestra tipica per richieste urgenti e preparazioni rapide"
+    },
+    {
+      "value": "B2B",
+      "label": "servizio pensato per imprese, falegnamerie e professionisti"
+    }
+  ],
+  "serviceCategories": [
+    {
+      "title": "Legname strutturale",
+      "description": "Travi, morali, abete e materiale per coperture, strutture e carpenteria."
+    },
+    {
+      "title": "Pannelli e semilavorati",
+      "description": "OSB, compensati, multistrati e pannelli tecnici per produzione e allestimento."
+    },
+    {
+      "title": "Tavolame e preparazione",
+      "description": "Materiale selezionato e impostato per ridurre tempi interni di lavorazione."
+    },
+    {
+      "title": "Logistica e supporto",
+      "description": "Consegne, coordinamento e confronto tecnico per ordini ricorrenti o urgenti."
+    }
+  ],
+  "contactChannels": [
+    {
+      "type": "whatsapp",
+      "kicker": "Rapido",
+      "title": "WhatsApp",
+      "description": "Ideale per inviare subito materiali, misure, foto o richieste di preventivo.",
+      "value": "Risposta veloce",
+      "cta": "Apri WhatsApp"
+    },
+    {
+      "type": "phone",
+      "kicker": "Diretto",
+      "title": "Telefono",
+      "description": "Per verifiche immediate su disponibilita, urgenze, ritiri e coordinamento consegne.",
+      "value": "+39 035 555 0142",
+      "cta": "Chiama ora"
+    },
+    {
+      "type": "email",
+      "kicker": "Dettagli",
+      "title": "Email",
+      "description": "Perfetta per richieste strutturate con elenchi materiali, quantita e specifiche.",
+      "value": "preventivi@rinaldilegnami.it",
+      "cta": "Invia una mail"
+    }
+  ]
+}
