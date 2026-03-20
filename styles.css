@@ -541,6 +541,13 @@ h3 {
   height: 360px;
 }
 
+.log-gallery-image {
+  height: auto;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.55rem;
+}
+
 .story-image:not(.story-image-large),
 .warehouse-image,
 .quote-image {
@@ -699,6 +706,14 @@ body.is-ready .hero-card {
   .quote-layout,
   .process-layout {
     grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  }
+
+  .log-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .log-gallery-image:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -887,6 +902,10 @@ body.is-ready .hero-card {
   .warehouse-image,
   .quote-image {
     height: 240px;
+  }
+
+  .log-gallery-image {
+    height: auto;
   }
 
   .contact-list-item {
