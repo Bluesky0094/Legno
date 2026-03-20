@@ -299,6 +299,8 @@ h3 {
 }
 
 .hero-home-shell {
+  width: min(1440px, calc(100vw - 1rem));
+  margin: 0 auto;
   padding-top: clamp(0.4rem, 1.4vw, 1rem);
 }
 
@@ -365,7 +367,7 @@ h3 {
   position: relative;
   display: grid;
   align-items: end;
-  min-height: clamp(560px, 82vh, 860px);
+  min-height: clamp(420px, 46vw, 620px);
   overflow: hidden;
   background: #120d0a;
   border-radius: calc(var(--radius) + 2px);
@@ -400,7 +402,7 @@ h3 {
   display: flex;
   align-items: end;
   min-height: inherit;
-  padding: clamp(4rem, 8vw, 6rem) 0;
+  padding: clamp(2.4rem, 5vw, 4rem) 0;
 }
 
 .hero-stage-inner {
@@ -408,8 +410,8 @@ h3 {
 }
 
 .hero-copy-minimal {
-  max-width: 40rem;
-  padding: clamp(1rem, 2vw, 1.35rem);
+  max-width: 46rem;
+  padding: clamp(0.9rem, 1.8vw, 1.2rem);
   border: 1px solid rgba(255, 243, 231, 0.1);
   border-radius: calc(var(--radius) - 2px);
   background: linear-gradient(180deg, rgba(18, 13, 10, 0.4), rgba(18, 13, 10, 0.52));
@@ -418,11 +420,11 @@ h3 {
 }
 
 .hero-copy-minimal h1 {
-  max-width: 10.5ch;
+  max-width: 13ch;
 }
 
 .hero-copy-minimal .hero-lead {
-  max-width: 34ch;
+  max-width: 44ch;
 }
 
 .hero-media,
@@ -1145,7 +1147,7 @@ body.is-ready .hero-panel {
   }
 
   .hero-stage-home {
-    min-height: 620px;
+    min-height: 520px;
   }
 
   .hero-stage-home::before {
@@ -1158,7 +1160,7 @@ body.is-ready .hero-panel {
   }
 
   .hero-stage-overlay {
-    padding: 3rem 0 2rem;
+    padding: 2rem 0 1.5rem;
   }
 
   .hero-copy-minimal {
