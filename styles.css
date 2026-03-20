@@ -446,6 +446,25 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.section-dark .preview-card,
+.section-dark .logistics-card,
+.section-dark .process-step {
+  background: #f1f3f6;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.section-dark .preview-card h3,
+.section-dark .logistics-card h3,
+.section-dark .process-step h3 {
+  color: #202733;
+}
+
+.section-dark .preview-card p,
+.section-dark .logistics-card p,
+.section-dark .process-step p {
+  color: #3d4652;
+}
+
 .material-card h3,
 .preview-card h3,
 .logistics-card h3,
