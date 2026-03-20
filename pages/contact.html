@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Contatti F.lli Rinaldi Legnami: WhatsApp, telefono, email, sede e orari per richieste rapide e preventivi."
+  >
+  <title>Contatti | F.lli Rinaldi Legnami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body data-page="contact" data-root="..">
+  <div data-component="header"></div>
+
+  <main>
+    <section class="inner-hero section">
+      <div class="container inner-hero-shell reveal">
+        <div class="content-stack">
+          <p class="eyebrow">Contatti</p>
+          <h1>Preventivi, disponibilita e consegne: parliamone senza passaggi inutili.</h1>
+          <p class="hero-lead">
+            Scegli il canale piu comodo. Se hai gia materiali, quantita, misure o tempi, possiamo partire subito da quelli.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer">Scrivi su WhatsApp</a>
+            <a class="btn btn-secondary" data-contact-link="phone">Chiama ora</a>
+            <a class="btn btn-tertiary" data-contact-link="email">Invia una mail</a>
+          </div>
+        </div>
+        <figure class="hero-media motion-item">
+          <img class="hero-image" src="../assets/images/hero/contact-aisle.jpg" alt="Corsia centrale di magazzino con tavolame ordinato">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-contact">
+      <div class="container contact-grid reveal" data-list="contactChannels" data-render="contact-channels"></div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container split-layout reveal">
+        <div class="content-stack">
+          <p class="eyebrow">Informazioni utili</p>
+          <h2>Se ci mandi piu dettagli subito, ti aiutiamo meglio.</h2>
+          <div class="bullet-list">
+            <article class="bullet-card motion-item">
+              <h3>Materiali richiesti</h3>
+              <p>Indica essenze, pannelli, sezioni o eventuali alternative gia valutate.</p>
+            </article>
+            <article class="bullet-card motion-item">
+              <h3>Quantita e misure</h3>
+              <p>Specificare dimensioni e volumi aiuta a verificare stock e preparazione.</p>
+            </article>
+            <article class="bullet-card motion-item">
+              <h3>Tempistiche e destinazione</h3>
+              <p>Ritiro, consegna, cantiere o laboratorio cambiano l'impostazione della fornitura.</p>
+            </article>
+          </div>
+        </div>
+        <div class="info-panel motion-item">
+          <p class="panel-label">Dati sede</p>
+          <div class="info-row">
+            <span>Indirizzo</span>
+            <strong data-field="contact.address"></strong>
+          </div>
+          <div class="info-row">
+            <span>Telefono</span>
+            <a data-contact-link="phone"><strong data-field="contact.phoneDisplay"></strong></a>
+          </div>
+          <div class="info-row">
+            <span>Email</span>
+            <a data-contact-link="email"><strong data-field="contact.email"></strong></a>
+          </div>
+          <div class="info-row">
+            <span>Orari</span>
+            <strong data-field="contact.hours"></strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-banner reveal">
+        <div class="content-stack">
+          <p class="eyebrow">Prima di scriverci</p>
+          <h2>Preventivo urgente o fornitura ricorrente? Entrambe le richieste meritano una risposta chiara.</h2>
+          <p class="section-intro">
+            Sia che ti serva una disponibilita veloce, sia che tu voglia impostare un rapporto continuativo, possiamo partire da una richiesta semplice e concreta.
+          </p>
+        </div>
+        <img class="feature-banner-image motion-item" src="../assets/images/gallery/covered-warehouse.webp" alt="Magazzino coperto con stoccaggio ordinato di legname">
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
