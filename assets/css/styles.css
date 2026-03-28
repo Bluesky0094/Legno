@@ -130,6 +130,7 @@ select {
 
 .site-header-inner {
   min-height: var(--header-h);
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
@@ -1102,9 +1103,12 @@ body.is-ready .hero-panel {
 
   .main-nav {
     position: absolute;
-    top: calc(var(--header-h) - 0.1rem);
-    left: 0.5rem;
-    right: 0.5rem;
+    top: calc(100% - 0.1rem);
+    right: 0;
+    left: auto;
+    width: auto;
+    min-width: 0;
+    max-width: calc(100vw - 1rem);
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -1122,14 +1126,15 @@ body.is-ready .hero-panel {
     display: grid;
     gap: 0.2rem;
     padding: 0.45rem;
+    justify-items: end;
   }
 
   .nav-list a {
-    width: 100%;
-    justify-content: flex-start;
+    width: auto;
+    justify-content: flex-end;
     border-radius: 14px;
     min-height: 34px;
-    padding: 0.72rem 0.9rem;
+    padding: 0.58rem 0.8rem;
   }
 
   .site-header.is-menu-open .main-nav {

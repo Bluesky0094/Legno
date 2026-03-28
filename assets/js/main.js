@@ -252,16 +252,34 @@ function setupMobileMenu() {
   const mobileQuery = window.matchMedia("(max-width: 860px)");
   const navLinks = nav.querySelectorAll("a[href]");
 
+  const syncMenuState = () => {
+    const isMobile = mobileQuery.matches;
+    const isOpen = header.classList.contains("is-menu-open");
+    const shouldHideNav = isMobile && !isOpen;
+
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggle.setAttribute("aria-label", isOpen ? "Chiudi menu di navigazione" : "Apri menu di navigazione");
+
+    if (shouldHideNav) {
+      nav.hidden = true;
+      nav.setAttribute("aria-hidden", "true");
+      nav.inert = true;
+      return;
+    }
+
+    nav.hidden = false;
+    nav.removeAttribute("aria-hidden");
+    nav.inert = false;
+  };
+
   const closeMenu = () => {
     header.classList.remove("is-menu-open");
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Apri menu di navigazione");
+    syncMenuState();
   };
 
   const openMenu = () => {
     header.classList.add("is-menu-open");
-    toggle.setAttribute("aria-expanded", "true");
-    toggle.setAttribute("aria-label", "Chiudi menu di navigazione");
+    syncMenuState();
   };
 
   toggle.addEventListener("click", () => {
@@ -280,10 +298,13 @@ function setupMobileMenu() {
 
   const onBreakpointChange = (event) => {
     if (!event.matches) closeMenu();
+    else syncMenuState();
   };
 
   if ("addEventListener" in mobileQuery) mobileQuery.addEventListener("change", onBreakpointChange);
   else mobileQuery.addListener(onBreakpointChange);
+
+  syncMenuState();
 }
 
 function highlightCurrentNav() {
