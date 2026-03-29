@@ -7,10 +7,17 @@
     name="description"
     content="F.lli Rinaldi Legnami: legname strutturale, pannelli, tavolame e servizi logistici per imprese, falegnamerie e professionisti."
   >
+  <meta property="og:title" content="F.lli Rinaldi Legnami | Fornitura di legno">
+  <meta property="og:description" content="Legname, pannelli e logistica per imprese, cantieri e falegnamerie.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero/home-yard.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <title>F.lli Rinaldi Legnami | Fornitura di legno per chi deve lavorare bene e in tempo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/gallery/timber-selection.jpg">
+  <link rel="preload" as="image" href="assets/images/hero/home-yard.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body data-page="home" data-root=".">
@@ -25,6 +32,7 @@
               class="hero-image hero-image-home"
               src="assets/images/hero/home-yard.jpg"
               alt="Corsia di stoccaggio con tavolame e travi in deposito"
+              fetchpriority="high"
             >
             <div class="hero-stage-overlay">
               <div class="container hero-stage-inner">
@@ -90,11 +98,15 @@
             class="stack-image stack-image-large motion-item"
             src="assets/images/hero/about-team.jpg"
             alt="Squadra in magazzino pronta a seguire ordini e forniture"
+            loading="lazy"
+            decoding="async"
           >
           <img
             class="stack-image motion-item"
             src="assets/images/gallery/quality-check.webp"
             alt="Controllo qualita del legname in area di selezione"
+            loading="lazy"
+            decoding="async"
           >
         </div>
       </div>
@@ -137,9 +149,9 @@
           <h2>Un deposito che mostra ordine, scala e capacita di risposta.</h2>
         </div>
         <div class="gallery-grid">
-          <img class="gallery-image gallery-image-wide motion-item" src="assets/images/gallery/covered-warehouse.webp" alt="Magazzino coperto con corsie di stoccaggio per legname e pannelli">
-          <img class="gallery-image motion-item" src="assets/images/gallery/plywood-selection.jpg" alt="Selezione di pannelli in area di stoccaggio">
-          <img class="gallery-image motion-item" src="assets/images/gallery/timber-selection.jpg" alt="Selezione del tavolame in magazzino">
+          <img class="gallery-image gallery-image-wide motion-item" src="assets/images/gallery/covered-warehouse.webp" alt="Magazzino coperto con corsie di stoccaggio per legname e pannelli" loading="lazy" decoding="async">
+          <img class="gallery-image motion-item" src="assets/images/gallery/plywood-selection.jpg" alt="Selezione di pannelli in area di stoccaggio" loading="lazy" decoding="async">
+          <img class="gallery-image motion-item" src="assets/images/gallery/timber-selection.jpg" alt="Selezione del tavolame in magazzino" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -153,6 +165,27 @@
         </p>
       </div>
       <div class="container contact-grid reveal" data-list="contactChannels" data-render="contact-channels"></div>
+      <div class="container quick-quote-shell reveal">
+        <div class="section-header compact-header">
+          <p class="eyebrow">Preventivo rapido</p>
+          <h3>Lascia due dati e apri subito il messaggio WhatsApp precompilato.</h3>
+        </div>
+        <form class="quick-quote-form" data-quick-quote-form>
+          <label>
+            Nome
+            <input type="text" name="name" autocomplete="name" placeholder="Mario Rossi">
+          </label>
+          <label>
+            Telefono
+            <input type="tel" name="phone" autocomplete="tel" placeholder="+39 ...">
+          </label>
+          <label class="field-wide">
+            Materiali / misure / tempi
+            <textarea name="request" rows="3" placeholder="Es. 40 pannelli OSB 250x125, consegna entro mercoledì"></textarea>
+          </label>
+          <button class="btn btn-primary field-wide" type="submit">Apri WhatsApp con richiesta</button>
+        </form>
+      </div>
       <div class="container contact-summary reveal">
         <div class="summary-card motion-item">
           <p class="summary-label">Sede</p>
