@@ -251,6 +251,7 @@ function setupMobileMenu() {
 
   const mobileQuery = window.matchMedia("(max-width: 860px)");
   const navLinks = nav.querySelectorAll("a[href]");
+  const focusableSelector = "a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])";
 
   const syncMenuState = () => {
     const isMobile = mobileQuery.matches;
@@ -274,11 +275,13 @@ function setupMobileMenu() {
 
   const closeMenu = () => {
     header.classList.remove("is-menu-open");
+    document.body.classList.remove("is-menu-open");
     syncMenuState();
   };
 
   const openMenu = () => {
     header.classList.add("is-menu-open");
+    document.body.classList.add("is-menu-open");
     syncMenuState();
   };
 
@@ -289,10 +292,31 @@ function setupMobileMenu() {
 
   navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
+  document.addEventListener("click", (event) => {
+    if (!mobileQuery.matches || !header.classList.contains("is-menu-open")) return;
+    if (header.contains(event.target)) return;
+    closeMenu();
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && header.classList.contains("is-menu-open")) {
       closeMenu();
       toggle.focus();
+    }
+
+    if (event.key !== "Tab" || !mobileQuery.matches || !header.classList.contains("is-menu-open")) return;
+    const focusable = [...nav.querySelectorAll(focusableSelector)];
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
     }
   });
 
@@ -312,6 +336,7 @@ function highlightCurrentNav() {
   if (!page) return;
   document.querySelectorAll(`[data-nav-key="${page}"]`).forEach((link) => {
     link.classList.add("is-active");
+    link.setAttribute("aria-current", "page");
   });
 }
 
@@ -319,6 +344,32 @@ function updateYear() {
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-current-year]").forEach((element) => {
     element.textContent = year;
+  });
+}
+
+function setupQuickQuoteForms(content) {
+  const forms = document.querySelectorAll("[data-quick-quote-form]");
+  if (!forms.length) return;
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get("name") || "").toString().trim();
+      const phone = (data.get("phone") || "").toString().trim();
+      const request = (data.get("request") || "").toString().trim();
+
+      const lines = [
+        "Buongiorno, vorrei richiedere un preventivo.",
+        name ? `Nome: ${name}` : "",
+        phone ? `Telefono: ${phone}` : "",
+        request ? `Dettagli richiesta: ${request}` : ""
+      ].filter(Boolean);
+
+      const url = new URL(content.contact.whatsappUrl);
+      url.searchParams.set("text", lines.join("\n"));
+      window.open(url.toString(), "_blank", "noopener,noreferrer");
+    });
   });
 }
 
@@ -338,8 +389,14 @@ async function initSite() {
   setupReveal();
   setupHeroParallax();
   setupMobileMenu();
+  setupQuickQuoteForms(content);
 }
 
 initSite().catch((error) => {
   console.error(error);
+  const fallback = document.createElement("div");
+  fallback.className = "site-fallback";
+  fallback.setAttribute("role", "status");
+  fallback.textContent = "Si è verificato un problema nel caricamento della pagina. Ricarica o contattaci via telefono.";
+  document.body.prepend(fallback);
 });
