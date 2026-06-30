@@ -1376,6 +1376,10 @@ body.is-ready .hero-panel {
 }
 
 /* Mobile-first UX refinements */
+.mobile-contact-bar {
+  display: none;
+}
+
 @media (hover: hover) {
   .feature-card,
   .service-card,
@@ -1390,15 +1394,19 @@ body.is-ready .hero-panel {
   .timeline-card:hover,
   .contact-card:hover,
   .stat-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(188, 105, 52, 0.22);
-    box-shadow: 0 22px 52px rgba(32, 23, 17, 0.12);
+    transform: translateY(-3px);
+    border-color: rgba(188, 105, 52, 0.28);
+    box-shadow: 0 28px 66px rgba(32, 23, 17, 0.15);
   }
 }
 
 @media (max-width: 860px) {
   :root {
     --container: calc(100vw - 1rem);
+  }
+
+  body {
+    padding-bottom: calc(4.65rem + env(safe-area-inset-bottom));
   }
 
   .site-header {
@@ -1428,17 +1436,14 @@ body.is-ready .hero-panel {
   }
 
   .main-nav {
-    top: 100%;
-    right: -0.5rem;
-    left: -0.5rem;
+    position: fixed;
+    top: calc(var(--header-h) + 0.45rem);
+    left: 0.5rem;
+    right: 0.5rem;
     width: auto;
     max-width: none;
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0 0 22px 22px;
-    background: rgba(253, 247, 239, 0.98);
-    box-shadow: 0 18px 34px rgba(23, 17, 12, 0.12);
-    transform: translateY(-6px);
+    border-radius: 22px;
+    transform: translateY(-8px) scale(0.98);
   }
 
   .nav-list {
@@ -1459,6 +1464,41 @@ body.is-ready .hero-panel {
   .nav-list a::after {
     content: ">";
     color: var(--accent-deep);
+  }
+
+  .mobile-contact-bar {
+    position: fixed;
+    left: max(0.65rem, env(safe-area-inset-left));
+    right: max(0.65rem, env(safe-area-inset-right));
+    bottom: max(0.65rem, env(safe-area-inset-bottom));
+    z-index: 120;
+    display: grid;
+    grid-template-columns: 0.82fr 1.15fr 0.82fr;
+    gap: 0.45rem;
+    padding: 0.45rem;
+    border: 1px solid rgba(61, 42, 28, 0.12);
+    border-radius: 999px;
+    background: rgba(253, 247, 239, 0.94);
+    box-shadow: 0 18px 44px rgba(23, 17, 12, 0.24);
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-contact-action {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 850;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .mobile-contact-action-primary {
+    color: #1c120b;
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
   }
 
   .hero,
