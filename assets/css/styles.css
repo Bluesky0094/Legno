@@ -3,3 +3,26 @@
 @media(max-width:900px){.site-header{grid-template-columns:1fr auto;padding:0 1rem}.header-quote{display:none}.menu-toggle{display:grid;width:48px;height:48px;padding:12px;border:1px solid var(--line);background:transparent}.menu-toggle span{height:1px;background:var(--forest)}.menu-toggle b{display:none}.site-nav{position:fixed;inset:90px 0 auto;display:none;padding:2rem;background:var(--chalk)}.site-nav.open{display:block}.site-nav ul{display:grid;gap:0}.site-nav a{display:block;padding:1rem;border-bottom:1px solid var(--line)}.intro-strip,.section-heading,.quote-layout{grid-template-columns:1fr}.material-row{grid-template-columns:1fr;min-height:0}.material-feature{height:380px}.material-list{grid-column:auto}.process-grid{grid-template-columns:repeat(2,1fr)}.editorial-split{grid-template-columns:1fr}.editorial-split img{height:480px}.catalogue{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.service-block{min-height:300px;border-left:1px solid var(--line)}.quote-intro{position:static}.site-footer{grid-template-columns:1fr 1fr}.site-footer>div:first-child{grid-column:1/-1}}
 @media(max-width:560px){.container,.hero-content{width:min(calc(100% - 1.5rem),var(--max))}.hero{min-height:720px}.hero h1{font-size:clamp(3.4rem,18vw,5.5rem)}.intro-strip,.material-preview,.process,.quote-layout{padding:4rem 0}.material-card{grid-template-columns:1fr}.material-card img{height:230px}.process-grid{grid-template-columns:1fr}.process article{min-height:220px}.editorial-split img{height:330px}.quote-form{grid-template-columns:1fr;padding:1rem}.field.full{grid-column:auto}.site-footer{grid-template-columns:1fr;padding:4rem 1rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+
+/* Mobile navigation: tactile material-card treatment. */
+@media(max-width:900px){
+  .menu-toggle{position:relative;z-index:2;place-content:center;gap:6px;overflow:hidden;transition:background .25s,border-color .25s}
+  .menu-toggle::after{content:"";position:absolute;right:0;bottom:0;width:13px;height:13px;background:var(--wood);clip-path:polygon(100% 0,100% 100%,0 100%);opacity:0;transition:opacity .2s}
+  .menu-toggle span{width:22px;transform-origin:center;transition:transform .25s,opacity .2s,width .25s}
+  .menu-toggle span:nth-child(2){width:15px;justify-self:start}
+  .menu-toggle[aria-expanded="true"]{border-color:var(--forest);background:var(--paper)}
+  .menu-toggle[aria-expanded="true"]::after{opacity:1}
+  .menu-toggle[aria-expanded="true"] span{grid-area:1/1;width:22px}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg)}
+  .site-nav.open{counter-reset:legno-nav;inset:90px 0 0;display:grid;place-items:start end;padding:clamp(1rem,5vw,2.5rem);overflow:auto;background:rgba(10,29,19,.72);backdrop-filter:blur(7px)}
+  .site-nav.open ul{width:min(100%,430px);padding:1.25rem 1.5rem 1.75rem;background:var(--chalk);border-top:6px solid var(--forest);box-shadow:0 24px 60px rgba(9,29,18,.28)}
+  .site-nav.open ul::before{content:"NORD LEGNAMI / SEZIONI";display:block;padding:.5rem 0 1rem;color:var(--wood);font-size:.62rem;font-weight:700;letter-spacing:.17em}
+  .site-nav.open li{counter-increment:legno-nav}
+  .site-nav.open a{display:grid;grid-template-columns:2.5rem 1fr auto;align-items:center;min-height:4.6rem;padding:.8rem 0;border-top:1px solid var(--line);border-bottom:0;color:var(--muted);font-size:.82rem;font-weight:700;letter-spacing:.15em}
+  .site-nav.open a::before{content:"0" counter(legno-nav);color:var(--wood);font-size:.58rem}
+  .site-nav.open a::after{content:"—";position:static;width:auto;height:auto;background:none;transform:none;color:#a8aaa2;transition:color .2s,transform .2s}
+  .site-nav.open a.active{color:var(--forest)}
+  .site-nav.open a.active::after{content:"↗";color:var(--forest);transform:translate(0,-2px)}
+}
